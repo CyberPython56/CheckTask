@@ -21,9 +21,11 @@ for _ in range(t):
                     lst[-1] += row[-1]
                 else:
                     lst.append(row[-1])
-        res = ''
+        res_ = []
         for i in range(len(lst) - 2):
             if len(lst[i]) + len(lst[i + 1]) + len(lst[i + 2]) >= k:
-                res = len(lst[i + 1])
-        res_lst.append(res)
+                res_.append(len(lst[i + 1]))
+            elif len(lst[-i - 1]) + len(lst[- i - 2]) + len(lst[-i - 3]) >= k:
+                res_.append(len(lst[-i - 2]))
+        res_lst.append(min(res_))
 print(*res_lst, sep='\n')
