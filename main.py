@@ -5,7 +5,6 @@ for _ in range(t):
     row = input()
     lst = []
     for i in range(0, n, k):
-        term = row[i:i + k]
-        lst.append((term, term.count('W')))
-    res_lst.append(min(lst, key=lambda x: x[1])[1])
+        lst.append((row[i:i + k].count('W')))
+    res_lst.append(min(lst))
 print(*res_lst, sep='\n')
