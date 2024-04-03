@@ -1,10 +1,19 @@
-t = int(input())
-res_lst = []
-for _ in range(t):
+def func():
     n, k = map(int, input().split())
     row = input()
-    lst = []
+    res = 10 ** 6
+    # for i in range(0, n, k):
+    #     d = {'B': 0, 'W': 0}
+    #     for j in range(k):
+    #         d[row[j]] += 1
+    #     res = min(res, d['W'])
     for i in range(0, n, k):
-        lst.append((row[i:i + k].count('W')))
-    res_lst.append(min(lst))
+        term = row[i:i + k].count('W')
+        if term < res:
+            res = term
+    return res
+
+
+t = int(input())
+res_lst = [func() for i in range(t)]
 print(*res_lst, sep='\n')
