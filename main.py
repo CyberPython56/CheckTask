@@ -7,8 +7,8 @@ def func():
     #     for j in range(k):
     #         d[row[j]] += 1
     #     res = min(res, d['W'])
-    for i in range(0, n, k):
-        term = row[i:i + k].count('W')
+    for i in range(0, n, k): # for проходит по n // k количеству элементов
+        term = row[i:i + k].count('W') # count() проходится по строке длиной k
         if term < res:
             res = term
     return res
